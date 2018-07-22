@@ -13,9 +13,7 @@
 		E134E2D220FD02A600A6834B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E134E2D120FD02A600A6834B /* Cocoa.framework */; };
 		E134E2D520FD02A600A6834B /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */; };
 		E134E2D720FD02A600A6834B /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */; };
-		E134E2DA20FD02A600A6834B /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E134E2D820FD02A600A6834B /* SafariExtensionViewController.xib */; };
 		E134E2DD20FD02A600A6834B /* newsblur.js in Resources */ = {isa = PBXBuildFile; fileRef = E134E2DC20FD02A600A6834B /* newsblur.js */; };
-		E134E2DF20FD02A600A6834B /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E134E2DE20FD02A600A6834B /* ToolbarItemIcon.pdf */; };
 		E134E2E320FD02A600A6834B /* NewsBlur Safari Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E134E2CF20FD02A600A6834B /* NewsBlur Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -54,10 +52,8 @@
 		E134E2D120FD02A600A6834B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
-		E134E2D920FD02A600A6834B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		E134E2DB20FD02A600A6834B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E134E2DC20FD02A600A6834B /* newsblur.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = newsblur.js; sourceTree = "<group>"; };
-		E134E2DE20FD02A600A6834B /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		E134E2E020FD02A600A6834B /* NewsBlur_Safari_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewsBlur_Safari_Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -124,10 +120,8 @@
 			children = (
 				E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */,
 				E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */,
-				E134E2D820FD02A600A6834B /* SafariExtensionViewController.xib */,
 				E134E2DB20FD02A600A6834B /* Info.plist */,
 				E134E2DC20FD02A600A6834B /* newsblur.js */,
-				E134E2DE20FD02A600A6834B /* ToolbarItemIcon.pdf */,
 				E134E2E020FD02A600A6834B /* NewsBlur_Safari_Extension.entitlements */,
 			);
 			path = "NewsBlur Safari Extension";
@@ -223,8 +217,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E134E2DF20FD02A600A6834B /* ToolbarItemIcon.pdf in Resources */,
-				E134E2DA20FD02A600A6834B /* SafariExtensionViewController.xib in Resources */,
 				E134E2DD20FD02A600A6834B /* newsblur.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -266,14 +258,6 @@
 				E134E2C220FD021900A6834B /* Base */,
 			);
 			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-		E134E2D820FD02A600A6834B /* SafariExtensionViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E134E2D920FD02A600A6834B /* Base */,
-			);
-			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
