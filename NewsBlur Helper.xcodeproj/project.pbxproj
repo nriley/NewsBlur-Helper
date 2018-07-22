@@ -10,7 +10,38 @@
 		E134E2BE20FD021700A6834B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2BD20FD021700A6834B /* AppDelegate.swift */; };
 		E134E2C020FD021900A6834B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E134E2BF20FD021900A6834B /* Assets.xcassets */; };
 		E134E2C320FD021900A6834B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E134E2C120FD021900A6834B /* MainMenu.xib */; };
+		E134E2D220FD02A600A6834B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E134E2D120FD02A600A6834B /* Cocoa.framework */; };
+		E134E2D520FD02A600A6834B /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */; };
+		E134E2D720FD02A600A6834B /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */; };
+		E134E2DA20FD02A600A6834B /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E134E2D820FD02A600A6834B /* SafariExtensionViewController.xib */; };
+		E134E2DD20FD02A600A6834B /* newsblur.js in Resources */ = {isa = PBXBuildFile; fileRef = E134E2DC20FD02A600A6834B /* newsblur.js */; };
+		E134E2DF20FD02A600A6834B /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E134E2DE20FD02A600A6834B /* ToolbarItemIcon.pdf */; };
+		E134E2E320FD02A600A6834B /* NewsBlur Safari Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E134E2CF20FD02A600A6834B /* NewsBlur Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E134E2E120FD02A600A6834B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E134E2B220FD021700A6834B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E134E2CE20FD02A600A6834B;
+			remoteInfo = "Safari Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E134E2E720FD02A600A6834B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				E134E2E320FD02A600A6834B /* NewsBlur Safari Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E134E2BA20FD021700A6834B /* NewsBlur Helper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NewsBlur Helper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +50,15 @@
 		E134E2C220FD021900A6834B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E134E2C420FD021900A6834B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E134E2C520FD021900A6834B /* NewsBlur_Helper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewsBlur_Helper.entitlements; sourceTree = "<group>"; };
+		E134E2CF20FD02A600A6834B /* NewsBlur Safari Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "NewsBlur Safari Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E134E2D120FD02A600A6834B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
+		E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
+		E134E2D920FD02A600A6834B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
+		E134E2DB20FD02A600A6834B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E134E2DC20FD02A600A6834B /* newsblur.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = newsblur.js; sourceTree = "<group>"; };
+		E134E2DE20FD02A600A6834B /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
+		E134E2E020FD02A600A6834B /* NewsBlur_Safari_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewsBlur_Safari_Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +69,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E134E2CC20FD02A600A6834B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E134E2D220FD02A600A6834B /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -36,6 +84,8 @@
 			isa = PBXGroup;
 			children = (
 				E134E2BC20FD021700A6834B /* NewsBlur Helper */,
+				E134E2D320FD02A600A6834B /* NewsBlur Safari Extension */,
+				E134E2D020FD02A600A6834B /* Frameworks */,
 				E134E2BB20FD021700A6834B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				E134E2BA20FD021700A6834B /* NewsBlur Helper.app */,
+				E134E2CF20FD02A600A6834B /* NewsBlur Safari Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,6 +111,28 @@
 			path = "NewsBlur Helper";
 			sourceTree = "<group>";
 		};
+		E134E2D020FD02A600A6834B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E134E2D120FD02A600A6834B /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E134E2D320FD02A600A6834B /* NewsBlur Safari Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */,
+				E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */,
+				E134E2D820FD02A600A6834B /* SafariExtensionViewController.xib */,
+				E134E2DB20FD02A600A6834B /* Info.plist */,
+				E134E2DC20FD02A600A6834B /* newsblur.js */,
+				E134E2DE20FD02A600A6834B /* ToolbarItemIcon.pdf */,
+				E134E2E020FD02A600A6834B /* NewsBlur_Safari_Extension.entitlements */,
+			);
+			path = "NewsBlur Safari Extension";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -70,15 +143,34 @@
 				E134E2B620FD021700A6834B /* Sources */,
 				E134E2B720FD021700A6834B /* Frameworks */,
 				E134E2B820FD021700A6834B /* Resources */,
+				E134E2E720FD02A600A6834B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				E134E2E220FD02A600A6834B /* PBXTargetDependency */,
 			);
 			name = "NewsBlur Helper";
 			productName = "NewsBlur Helper";
 			productReference = E134E2BA20FD021700A6834B /* NewsBlur Helper.app */;
 			productType = "com.apple.product-type.application";
+		};
+		E134E2CE20FD02A600A6834B /* NewsBlur Safari Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E134E2E420FD02A600A6834B /* Build configuration list for PBXNativeTarget "NewsBlur Safari Extension" */;
+			buildPhases = (
+				E134E2CB20FD02A600A6834B /* Sources */,
+				E134E2CC20FD02A600A6834B /* Frameworks */,
+				E134E2CD20FD02A600A6834B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "NewsBlur Safari Extension";
+			productName = "Safari Extension";
+			productReference = E134E2CF20FD02A600A6834B /* NewsBlur Safari Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -91,6 +183,9 @@
 				ORGANIZATIONNAME = NewsBlur;
 				TargetAttributes = {
 					E134E2B920FD021700A6834B = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					E134E2CE20FD02A600A6834B = {
 						CreatedOnToolsVersion = 10.0;
 					};
 				};
@@ -109,6 +204,7 @@
 			projectRoot = "";
 			targets = (
 				E134E2B920FD021700A6834B /* NewsBlur Helper */,
+				E134E2CE20FD02A600A6834B /* NewsBlur Safari Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -123,6 +219,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E134E2CD20FD02A600A6834B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E134E2DF20FD02A600A6834B /* ToolbarItemIcon.pdf in Resources */,
+				E134E2DA20FD02A600A6834B /* SafariExtensionViewController.xib in Resources */,
+				E134E2DD20FD02A600A6834B /* newsblur.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -134,7 +240,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E134E2CB20FD02A600A6834B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E134E2D720FD02A600A6834B /* SafariExtensionViewController.swift in Sources */,
+				E134E2D520FD02A600A6834B /* SafariExtensionHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E134E2E220FD02A600A6834B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E134E2CE20FD02A600A6834B /* NewsBlur Safari Extension */;
+			targetProxy = E134E2E120FD02A600A6834B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E134E2C120FD021900A6834B /* MainMenu.xib */ = {
@@ -143,6 +266,14 @@
 				E134E2C220FD021900A6834B /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E134E2D820FD02A600A6834B /* SafariExtensionViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E134E2D920FD02A600A6834B /* Base */,
+			);
+			name = SafariExtensionViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -266,6 +397,7 @@
 		E134E2C920FD021900A6834B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "NewsBlur Helper/NewsBlur_Helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -276,6 +408,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.newsblur.NewsBlur-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -285,6 +418,7 @@
 		E134E2CA20FD021900A6834B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "NewsBlur Helper/NewsBlur_Helper.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -295,8 +429,49 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.newsblur.NewsBlur-Helper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+		E134E2E520FD02A600A6834B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "NewsBlur Safari Extension/NewsBlur_Safari_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CYEL96ZVC2;
+				INFOPLIST_FILE = "$(SRCROOT)/NewsBlur Safari Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.newsblur.NewsBlur-Helper.Safari-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		E134E2E620FD02A600A6834B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "NewsBlur Safari Extension/NewsBlur_Safari_Extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = CYEL96ZVC2;
+				INFOPLIST_FILE = "$(SRCROOT)/NewsBlur Safari Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.newsblur.NewsBlur-Helper.Safari-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
@@ -318,6 +493,15 @@
 			buildConfigurations = (
 				E134E2C920FD021900A6834B /* Debug */,
 				E134E2CA20FD021900A6834B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E134E2E420FD02A600A6834B /* Build configuration list for PBXNativeTarget "NewsBlur Safari Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E134E2E520FD02A600A6834B /* Debug */,
+				E134E2E620FD02A600A6834B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
