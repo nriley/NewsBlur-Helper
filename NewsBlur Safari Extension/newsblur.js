@@ -15,6 +15,10 @@ window.addEventListener('openInNewTab', function(e) {
     if (documentDomain != newsBlurDomain && !documentDomain.endsWith('.' + newsBlurDomain))
         return;
 
+    // Tell NewsBlur that we opened the story via the DOM
+    // (since we can't do it by manipulating the event any more)
+    e.target.parentElement.classList.add('NB-story-webkit-opened');
+
     var message = {
         href: e.target.href,
         background: e.detail.background

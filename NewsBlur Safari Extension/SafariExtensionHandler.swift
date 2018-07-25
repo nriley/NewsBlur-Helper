@@ -18,17 +18,23 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     func openInNewTab(_ url: URL, inBackground background: Bool, from page: SFSafariPage) {
         NSLog("Trying to open page in new tab: \(url) in background: \(background)")
         SFSafariApplication.getActiveWindow { (activeWindow) in
-            activeWindow?.getActiveTab(completionHandler: { (activeTab) in
-                // XXX what we really want is the last tab opened for tab...
-                activeWindow?.openTab(with: url, makeActiveIfPossible: !background, completionHandler: { (newTab) in
-                    NSLog("Opened page in new tab: \(url)")
-                })
+            guard let activeWindow = activeWindow else {
+                NSLog("Unable to get active Safari window")
+                return
+            }
+            // activeWindow.getActiveTab(completionHandler: { (activeTab) in
+            // XXX no way to access other tabs in window - regression from Safari extension API
+            activeWindow.openTab(with: url, makeActiveIfPossible: !background, completionHandler: { (newTab) in
+                guard let newTab = newTab else {
+                    NSLog("Unable to open URL \(url) in new tab of window \(activeWindow)")
+                    return
+                }
+                NSLog("Opened page in new tab for window \(activeWindow): \(url) - \(newTab)")
             })
         }
     }
 
     override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
-        // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
         page.getPropertiesWithCompletionHandler { properties in
             NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
             if messageName == "getSettings" {
