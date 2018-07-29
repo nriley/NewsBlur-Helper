@@ -15,13 +15,21 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
 
     override init() {
         super.init()
-        NSLog("Adding observer for \(String(describing: defaults.suite))")
         defaults.suite?.addObserver(self, forKeyPath: Defaults.Key.newsBlurDomain, options: NSKeyValueObservingOptions.new, context: nil)
-        NSLog("Added observer")
     }
 
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        NSLog("Observing change!")
+        // XXX this is still causing problems including infinite loops
+        // XXX and is not functional anyway due to aggressive quitting
+        NSLog("Observed defaults change - propagating to \(pages.count) page(s)")
+        for page in pages.objectEnumerator() {
+            guard let page = page as? SFSafariPage
+                else {
+                    continue
+                }
+            NSLog("Updated page: \(String(describing: page))")
+            updateSettings(in: page)
+        }
     }
 
     deinit {
@@ -29,7 +37,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     }
 
     func updateSettings(in page: SFSafariPage) {
-        // XXX watch to update?
         page.dispatchMessageToScript(withName: "updateSettings", userInfo: [
             Defaults.Key.newsBlurDomain: defaults.newsBlurDomain ?? "newsblur.com"])
         pages.add(page)

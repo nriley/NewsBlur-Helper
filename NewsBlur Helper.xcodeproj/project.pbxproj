@@ -104,12 +104,12 @@
 			isa = PBXGroup;
 			children = (
 				E134E2BD20FD021700A6834B /* AppDelegate.swift */,
+				E152615C210D1E7E008C4455 /* Defaults.swift */,
+				E152615F210E1B5F008C4455 /* DomainNameFormatter.swift */,
 				E134E2BF20FD021900A6834B /* Assets.xcassets */,
 				E134E2C120FD021900A6834B /* MainMenu.xib */,
 				E134E2C420FD021900A6834B /* Info.plist */,
 				E134E2C520FD021900A6834B /* NewsBlur_Helper.entitlements */,
-				E152615C210D1E7E008C4455 /* Defaults.swift */,
-				E152615F210E1B5F008C4455 /* DomainNameFormatter.swift */,
 			);
 			path = "NewsBlur Helper";
 			sourceTree = "<group>";
