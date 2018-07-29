@@ -44,6 +44,6 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2018 NewsBlur. All rights reserved.</string>
 	<key>NSHumanReadableDescription</key>
-	<string>Allows you to open NewsBlur stories in a new tab.</string>
+	<string>Allows you to open NewsBlur stories in a new tab. (Needs access to “all webpages” in order to open any page in a new tab.)</string>
 </dict>
 </plist>

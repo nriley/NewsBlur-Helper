@@ -15,6 +15,8 @@
 		E134E2D720FD02A600A6834B /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */; };
 		E134E2DD20FD02A600A6834B /* newsblur.js in Resources */ = {isa = PBXBuildFile; fileRef = E134E2DC20FD02A600A6834B /* newsblur.js */; };
 		E134E2E320FD02A600A6834B /* NewsBlur Safari Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E134E2CF20FD02A600A6834B /* NewsBlur Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E152615D210D1E7E008C4455 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152615C210D1E7E008C4455 /* Defaults.swift */; };
+		E152615E210D280A008C4455 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152615C210D1E7E008C4455 /* Defaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +57,7 @@
 		E134E2DB20FD02A600A6834B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E134E2DC20FD02A600A6834B /* newsblur.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = newsblur.js; sourceTree = "<group>"; };
 		E134E2E020FD02A600A6834B /* NewsBlur_Safari_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewsBlur_Safari_Extension.entitlements; sourceTree = "<group>"; };
+		E152615C210D1E7E008C4455 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +106,7 @@
 				E134E2C120FD021900A6834B /* MainMenu.xib */,
 				E134E2C420FD021900A6834B /* Info.plist */,
 				E134E2C520FD021900A6834B /* NewsBlur_Helper.entitlements */,
+				E152615C210D1E7E008C4455 /* Defaults.swift */,
 			);
 			path = "NewsBlur Helper";
 			sourceTree = "<group>";
@@ -178,9 +182,25 @@
 				TargetAttributes = {
 					E134E2B920FD021700A6834B = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 					E134E2CE20FD02A600A6834B = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.Mac = {
+								enabled = 1;
+							};
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -229,6 +249,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E134E2BE20FD021700A6834B /* AppDelegate.swift in Sources */,
+				E152615D210D1E7E008C4455 /* Defaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E152615E210D280A008C4455 /* Defaults.swift in Sources */,
 				E134E2D720FD02A600A6834B /* SafariExtensionViewController.swift in Sources */,
 				E134E2D520FD02A600A6834B /* SafariExtensionHandler.swift in Sources */,
 			);

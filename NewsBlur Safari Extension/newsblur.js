@@ -4,8 +4,9 @@ safari.self.addEventListener('message', function(e) {
     if (e.name != 'updateSettings')
         return;
 
+    // XXX why are we getting invoked when newsBlurDomain is already set?!
+    console.log('updating newsBlurDomain: ' + e.message.newsBlurDomain + ' - was: ' + newsBlurDomain);
     newsBlurDomain = e.message.newsBlurDomain;
-    console.log('updated newsBlurDomain: ' + newsBlurDomain);
 });
 safari.extension.dispatchMessage('getSettings');
 

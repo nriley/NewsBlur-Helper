@@ -10,9 +10,29 @@ import SafariServices
 
 class SafariExtensionHandler: SFSafariExtensionHandler {
 
+    let defaults: Defaults = Defaults()
+    let pages: NSHashTable<SFSafariPage> = NSHashTable.weakObjects()
+
+    override init() {
+        super.init()
+        NSLog("Adding observer for \(String(describing: defaults.suite))")
+        defaults.suite?.addObserver(self, forKeyPath: Defaults.Key.newsBlurDomain, options: NSKeyValueObservingOptions.new, context: nil)
+        NSLog("Added observer")
+    }
+
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        NSLog("Observing change!")
+    }
+
+    deinit {
+        defaults.suite?.removeObserver(self, forKeyPath: Defaults.Key.newsBlurDomain)
+    }
+
     func updateSettings(in page: SFSafariPage) {
-        // XXX just newsblur.com for now
-        page.dispatchMessageToScript(withName: "updateSettings", userInfo: ["newsBlurDomain": "newsblur.com"])
+        // XXX watch to update?
+        page.dispatchMessageToScript(withName: "updateSettings", userInfo: [
+            Defaults.Key.newsBlurDomain: defaults.newsBlurDomain ?? "newsblur.com"])
+        pages.add(page)
     }
 
     func openInNewTab(_ url: URL, inBackground background: Bool, from page: SFSafariPage) {
