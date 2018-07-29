@@ -32,7 +32,6 @@ class Defaults : NSObject {
 
     var newsBlurDomain: String? {
         get {
-            // XXX validation
             return suite?.string(forKey: Key.newsBlurDomain)
         }
     }
