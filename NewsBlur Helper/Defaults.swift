@@ -11,6 +11,7 @@ import Cocoa
 class Defaults : NSObject {
     enum Key {
         static let newsBlurDomain: String = "newsBlurDomain"
+        static let askToSetFeedApp: String = "askToSetFeedApp"
     }
 
     lazy var suite: UserDefaults? = {
@@ -33,6 +34,23 @@ class Defaults : NSObject {
     var newsBlurDomain: String? {
         get {
             return suite?.string(forKey: Key.newsBlurDomain)
+        }
+    }
+
+    lazy var standard: UserDefaults = {
+        let standard = UserDefaults.standard
+        standard.register(defaults: [
+            Key.askToSetFeedApp: true
+            ])
+        return standard
+    }()
+
+    var askToSetFeedApp: Bool {
+        get {
+            return standard.bool(forKey: Key.askToSetFeedApp)
+        }
+        set {
+            standard.set(newValue, forKey: Key.askToSetFeedApp)
         }
     }
 }
