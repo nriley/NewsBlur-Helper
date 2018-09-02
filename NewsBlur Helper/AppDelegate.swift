@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let alert: NSAlert = NSAlert()
         alert.messageText = "NewsBlur Helper is not your default feed reader."
-        alert.informativeText = "Do you want to set NewsBlur Helper as your default feed reader?\n\nIf you do so, NewsBlur will automatically open feeds in your preferred browser."
+        alert.informativeText = "Do you want to set NewsBlur Helper as your default feed reader?\n\nIf you do so, feeds will open NewsBlur in your default web browser."
         alert.showsSuppressionButton = true
         alert.addButton(withTitle: "Don’t Set")
         alert.addButton(withTitle: "Set")
