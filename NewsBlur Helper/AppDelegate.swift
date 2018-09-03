@@ -25,18 +25,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
 
-        var canSetFeedApp: Bool = true
-
         if
             let defaultFeedAppURL: URL = (LSCopyDefaultApplicationURLForURL(
                 URL(string: "\(AppDelegate.feedURLScheme)://")! as CFURL, LSRolesMask.viewer, nil)?.takeRetainedValue() as URL?),
-            let defaultFeedAppBundleIdentifier: String = Bundle(url: defaultFeedAppURL)?.bundleIdentifier
-        {
-            canSetFeedApp = mainBundleIdentifier != defaultFeedAppBundleIdentifier
-        }
-
-        if !canSetFeedApp {
-            return
+            let defaultFeedAppBundleIdentifier: String = Bundle(url: defaultFeedAppURL)?.bundleIdentifier,
+            mainBundleIdentifier == defaultFeedAppBundleIdentifier {
+                return // nothing to do
         }
 
         let alert: NSAlert = NSAlert()
