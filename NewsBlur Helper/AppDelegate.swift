@@ -15,7 +15,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         let defaults = Defaults()
-
         if !defaults.askToSetFeedApp {
             return
         }
@@ -39,13 +38,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         alert.showsSuppressionButton = true
         alert.addButton(withTitle: "Don’t Set")
         alert.addButton(withTitle: "Set")
-        let alertResponse: NSApplication.ModalResponse = alert.runModal()
 
-        if alert.suppressionButton!.state == NSControl.StateValue.on {
-            defaults.askToSetFeedApp = false
-        }
-
-        if alertResponse == NSApplication.ModalResponse.alertSecondButtonReturn {
+        if alert.runModal() == NSApplication.ModalResponse.alertSecondButtonReturn {
             // requires disabling sandboxing: https://stackoverflow.com/questions/26241689/
             let err: OSStatus = LSSetDefaultHandlerForURLScheme(
                 AppDelegate.feedURLScheme as CFString, mainBundleIdentifier as CFString)
@@ -53,6 +47,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 NSAlert(error: NSError(domain: NSOSStatusErrorDomain, code: Int(err))).runModal()
                 return
             }
+        }
+
+        if alert.suppressionButton!.state == NSControl.StateValue.on {
+            defaults.askToSetFeedApp = false
         }
     }
 
