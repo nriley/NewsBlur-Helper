@@ -32,8 +32,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 URL(string: "\(AppDelegate.feedURLScheme)://")! as CFURL, LSRolesMask.viewer, nil)?.takeRetainedValue() as URL?),
             let defaultFeedAppBundleIdentifier: String = Bundle(url: defaultFeedAppURL)?.bundleIdentifier
         {
-            print("defaultFeedAppBundleIdentifier: \(defaultFeedAppBundleIdentifier)")
-            print("mainBundleIdentifier: \(mainBundleIdentifier)")
             canSetFeedApp = mainBundleIdentifier != defaultFeedAppBundleIdentifier
         }
 
