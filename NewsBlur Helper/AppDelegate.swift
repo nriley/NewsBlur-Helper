@@ -13,7 +13,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     static let feedURLScheme: String = "feed"
 
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
+    func checkIfDefaultFeedApp() {
         let defaults = Defaults()
         if !defaults.askToSetFeedApp {
             return
@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 URL(string: "\(AppDelegate.feedURLScheme)://")! as CFURL, LSRolesMask.viewer, nil)?.takeRetainedValue() as URL?),
             let defaultFeedAppBundleIdentifier: String = Bundle(url: defaultFeedAppURL)?.bundleIdentifier,
             mainBundleIdentifier == defaultFeedAppBundleIdentifier {
-                return // nothing to do
+            return // nothing to do
         }
 
         let alert: NSAlert = NSAlert()
@@ -54,8 +54,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        checkIfDefaultFeedApp()
+
+        // application(_open:) has been invoked prior to this notification being delivered, so we can quit now
+        let isDefaultLaunch: Bool = aNotification.userInfo?[NSApplication.launchIsDefaultUserInfoKey] as? Bool ?? true
+        if (!isDefaultLaunch) {
+            NSApp.terminate(nil)
+        }
     }
 
     func presentAlert(_ description: String) {
@@ -106,10 +112,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
             NSWorkspace.shared.open(addURL)
         }
-    }
-
-    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
-        return true
     }
 }
 
