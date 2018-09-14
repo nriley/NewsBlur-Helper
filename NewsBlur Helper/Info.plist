@@ -32,18 +32,18 @@
 	<key>CFBundleVersion</key>
 	<string>1</string>
 	<key>LSMinimumSystemVersion</key>
-	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
+	<string>10.12.6</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2018 NewsBlur. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
-	<key>SUPublicDSAFile</key>
-	<string>dsa_pub.pem</string>
-	<key>SUFeedURL</key>
-	<string>https://sabi.net/temp/newsblur-helper/appcast.xml</string>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
+	<key>SUFeedURL</key>
+	<string>https://sabi.net/temp/newsblur-helper/appcast.xml</string>
+	<key>SUPublicDSAFile</key>
+	<string>dsa_pub.pem</string>
 </dict>
 </plist>
