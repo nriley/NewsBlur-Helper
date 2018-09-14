@@ -11,10 +11,13 @@
 		E134E2C020FD021900A6834B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E134E2BF20FD021900A6834B /* Assets.xcassets */; };
 		E134E2C320FD021900A6834B /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E134E2C120FD021900A6834B /* MainMenu.xib */; };
 		E134E2D220FD02A600A6834B /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E134E2D120FD02A600A6834B /* Cocoa.framework */; };
-		E134E2D520FD02A600A6834B /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */; };
 		E134E2D720FD02A600A6834B /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D620FD02A600A6834B /* SafariExtensionViewController.swift */; };
 		E134E2DD20FD02A600A6834B /* newsblur.js in Resources */ = {isa = PBXBuildFile; fileRef = E134E2DC20FD02A600A6834B /* newsblur.js */; };
 		E134E2E320FD02A600A6834B /* NewsBlur Safari Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = E134E2CF20FD02A600A6834B /* NewsBlur Safari Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		E1469B4F214B354900D66D69 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1469B4E214B354900D66D69 /* Sparkle.framework */; };
+		E1469B51214B359F00D66D69 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = E134E2D420FD02A600A6834B /* SafariExtensionHandler.swift */; };
+		E1469B53214B35D900D66D69 /* Sparkle.framework in Copy Files */ = {isa = PBXBuildFile; fileRef = E1469B4E214B354900D66D69 /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E1469B55214C0C0E00D66D69 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = E1469B54214C0C0E00D66D69 /* dsa_pub.pem */; };
 		E152615D210D1E7E008C4455 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152615C210D1E7E008C4455 /* Defaults.swift */; };
 		E152615E210D280A008C4455 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152615C210D1E7E008C4455 /* Defaults.swift */; };
 		E1526160210E1B5F008C4455 /* DomainNameFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E152615F210E1B5F008C4455 /* DomainNameFormatter.swift */; };
@@ -42,6 +45,17 @@
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E1469B52214B35CB00D66D69 /* Copy Files */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E1469B53214B35D900D66D69 /* Sparkle.framework in Copy Files */,
+			);
+			name = "Copy Files";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +72,8 @@
 		E134E2DB20FD02A600A6834B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E134E2DC20FD02A600A6834B /* newsblur.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = newsblur.js; sourceTree = "<group>"; };
 		E134E2E020FD02A600A6834B /* NewsBlur_Safari_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NewsBlur_Safari_Extension.entitlements; sourceTree = "<group>"; };
+		E1469B4E214B354900D66D69 /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sparkle.framework; path = Sparkle/Sparkle.framework; sourceTree = "<group>"; };
+		E1469B54214C0C0E00D66D69 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = SOURCE_ROOT; };
 		E152615C210D1E7E008C4455 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		E152615F210E1B5F008C4455 /* DomainNameFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainNameFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1469B4F214B354900D66D69 /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,6 +125,7 @@
 				E152615F210E1B5F008C4455 /* DomainNameFormatter.swift */,
 				E134E2BF20FD021900A6834B /* Assets.xcassets */,
 				E134E2C120FD021900A6834B /* MainMenu.xib */,
+				E1469B54214C0C0E00D66D69 /* dsa_pub.pem */,
 				E134E2C420FD021900A6834B /* Info.plist */,
 				E134E2C520FD021900A6834B /* NewsBlur_Helper.entitlements */,
 			);
@@ -118,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				E134E2D120FD02A600A6834B /* Cocoa.framework */,
+				E1469B4E214B354900D66D69 /* Sparkle.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -145,6 +164,7 @@
 				E134E2B720FD021700A6834B /* Frameworks */,
 				E134E2B820FD021700A6834B /* Resources */,
 				E134E2E720FD02A600A6834B /* Embed App Extensions */,
+				E1469B52214B35CB00D66D69 /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -232,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E134E2C020FD021900A6834B /* Assets.xcassets in Resources */,
+				E1469B55214C0C0E00D66D69 /* dsa_pub.pem in Resources */,
 				E134E2C320FD021900A6834B /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -263,7 +284,7 @@
 			files = (
 				E152615E210D280A008C4455 /* Defaults.swift in Sources */,
 				E134E2D720FD02A600A6834B /* SafariExtensionViewController.swift in Sources */,
-				E134E2D520FD02A600A6834B /* SafariExtensionHandler.swift in Sources */,
+				E1469B51214B359F00D66D69 /* SafariExtensionHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -323,6 +344,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -347,6 +369,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -384,6 +407,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -401,6 +425,7 @@
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
@@ -413,6 +438,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CYEL96ZVC2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sparkle",
+				);
 				INFOPLIST_FILE = "NewsBlur Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -434,6 +463,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = CYEL96ZVC2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Sparkle",
+				);
 				INFOPLIST_FILE = "NewsBlur Helper/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
