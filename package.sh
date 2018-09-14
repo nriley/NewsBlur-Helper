@@ -57,3 +57,5 @@ $PACKAGEDIR/Sparkle/bin/generate_appcast $PACKAGEDIR/dsa_priv.pem $RELEASEDIR
 
 # clean up
 rm -rf "$EXPORTDIR"
+rm -rf $RELEASEDIR/.tmp
+
