@@ -113,5 +113,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             NSWorkspace.shared.open(addURL)
         }
     }
+
+    @IBAction func openNewsBlurForum(_ sender: NSMenuItem) {
+        NSWorkspace.shared.open(URL(string: "https://forum.newsblur.com/")!)
+    }
 }
 

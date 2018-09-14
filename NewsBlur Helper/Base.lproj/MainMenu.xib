@@ -332,9 +332,10 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                         <items>
-                            <menuItem title="NewsBlur Helper Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                            <menuItem title="The NewsBlur Forum" id="FKE-Sm-Kum">
+                                <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="showHelp:" target="-1" id="y7X-2Q-9no"/>
+                                    <action selector="openNewsBlurForum:" target="Voe-Tx-rLC" id="ZSH-u8-29z"/>
                                 </connections>
                             </menuItem>
                         </items>
