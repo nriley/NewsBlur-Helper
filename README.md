@@ -16,9 +16,9 @@ Please note that currently the Safari app extension may launch on every Safari p
 
 Handling `feed:` URLs
 ---------------------
-The `feed` URL scheme allows a feed to be opened in your preferred feed reader, such as NewsBlur.  When you launch NewsBlur Helper, it will offer to register itself to pass `feed` URLs to NewsBlur.  If you don’t want NewsBlur to handle `feed` URLs, check the checkbox and NewsBlur Helper will never ask again. 
+The `feed` URL scheme allows a feed to be opened in your preferred feed reader, such as NewsBlur.  When you launch NewsBlur Helper, it will offer to send `feed` URLs to NewsBlur.  If you don’t want NewsBlur to handle `feed` URLs, check the checkbox and NewsBlur Helper will never ask again. 
 
-Previously, this functionality was provided by the "NewsBlur Safari Helper" app.
+Previously, this functionality was provided by the NewsBlur Safari Helper app.
 
 If you have the NewsBlur Web app installed on your own server
 -------------------------------------------------------------
