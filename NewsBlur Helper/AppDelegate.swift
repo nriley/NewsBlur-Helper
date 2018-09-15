@@ -168,4 +168,3 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
         NSWorkspace.shared.open(URL(string: "https://forum.newsblur.com/")!)
     }
 }
-
