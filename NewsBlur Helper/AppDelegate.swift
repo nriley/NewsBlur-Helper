@@ -13,6 +13,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     static let feedURLScheme: String = "feed"
 
+    var wasAskedToOpenURLs: Bool = false
+
     func checkIfDefaultFeedApp() {
         let defaults = Defaults()
         if !defaults.askToSetFeedApp {
@@ -30,6 +32,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             let defaultFeedAppBundleIdentifier: String = Bundle(url: defaultFeedAppURL)?.bundleIdentifier,
             mainBundleIdentifier == defaultFeedAppBundleIdentifier {
             return // nothing to do
+        }
+
+        // At least in 10.13.6, may need to force activation on first launch (Gatekeeper focus stealing, I think)
+        if !NSApp.isActive {
+            NSApp.activate(ignoringOtherApps: true)
         }
 
         let alert: NSAlert = NSAlert()
@@ -55,12 +62,15 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        checkIfDefaultFeedApp()
+        // At least in 10.13.6, need to delay NSAlert display because the app won't activate on first launch otherwise
+        // and trying to force activation doesn't work (Gatekeeper focus stealing, I think)
 
-        // application(_open:) has been invoked prior to this notification being delivered, so we can quit now
-        let isDefaultLaunch: Bool = aNotification.userInfo?[NSApplication.launchIsDefaultUserInfoKey] as? Bool ?? true
-        if (!isDefaultLaunch) {
-            NSApp.terminate(nil)
+        DispatchQueue.main.async {
+            self.checkIfDefaultFeedApp()
+
+            if self.wasAskedToOpenURLs {
+                NSApp.terminate(nil)
+            }
         }
     }
 
@@ -70,6 +80,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func application(_ application: NSApplication, open urls: [URL]) {
+        wasAskedToOpenURLs = true
         guard let addURLPrefix = URL(string: "https://\(Defaults().newsBlurDomain!)/?url=")
             else {
                 presentAlert("Can't get NewsBlur URL for domain \(Defaults().newsBlurDomain ?? "(null)").")
