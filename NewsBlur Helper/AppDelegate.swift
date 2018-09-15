@@ -62,14 +62,20 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // At least in 10.13.6, need to delay NSAlert display because the app won't activate on first launch otherwise
-        // and trying to force activation doesn't work (Gatekeeper focus stealing, I think)
+        // At least in 10.13.6, need to delay NSAlert display because the app ends up
+        // in the background on first launch otherwise (Gatekeeper focus stealing, I think)
+        // and trying to force activation from applicationDidFinishLaunching doesn't work
 
         DispatchQueue.main.async {
             self.checkIfDefaultFeedApp()
 
             if self.wasAskedToOpenURLs {
                 NSApp.terminate(nil)
+            } else if !NSApp.isActive && !NSApp.isHidden {
+                // Work around Gatekeeper focus stealing if we don't need to display a NSAlert
+                // (attempt to avoid stealing focus ourselves if we're hidden, since this could
+                // conceivably be triggered at other times)
+                NSApp.activate(ignoringOtherApps: true)
             }
         }
     }
