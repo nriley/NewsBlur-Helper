@@ -8,7 +8,14 @@ Opening stories in a new tab in Safari
 
 Safari 10 and later no longer support the method the [NewsBlur](https://www.newsblur.com/) Web app uses to open stories in tabs.  This app includes a Safari app extension which gives NewsBlur the ability to do so again.
 
-After copying the app to your Applications folder, reload the NewsBlur tab if it's open, or just quit and reopen Safari.  You should then be able to use the 'o' or 'v' keys to open stories in new tabs.
+After copying the app to your Applications folder:
+
+* Open Preferences in Safari.
+* Click Extensions.
+* Check the box next to NewsBlur in the extension list.
+* Reload the NewsBlur tab if it's open, or just quit and reopen Safari.
+
+You should then be able to use the 'o' or 'v' keys to open stories in new tabs.
 
 Previously, similar functionality was provided by the [NewsBlur Open in New Tab Safari extension](https://github.com/nriley/OpenInNewTab), which is no longer supported as of Safari 12.
 
