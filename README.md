@@ -31,7 +31,7 @@ If you have the NewsBlur Web app installed on your own server
 -------------------------------------------------------------
 If you do not access NewsBlur at newsblur.com, you can specify the domain of your own server in NewsBlur Helper’s Preferences.  The extension will only work on this domain, and `feed` URLs will redirect to this domain.  You will need to reload/reopen the site after changing this domain.
 
-Problems? Please [create an issue](https://github.com/nriley/NewsBlur-Helper/issues).
+Problems? Please [create an issue](https://github.com/nriley/NewsBlur-Helper/issues) or post on the [forum](https://forum.newsblur.com/t/safari-browser-extension-for-newsblur/4855/5).
 
 Enjoy!
 
