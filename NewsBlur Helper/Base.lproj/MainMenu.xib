@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -346,21 +345,29 @@
         <window identifier="NewsBlur Helper Preferences" title="NewsBlur Helper Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="NewsBlur Helper Preferences" animationBehavior="default" id="QvC-M9-y7g" userLabel="Preferences Panel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
             <rect key="contentRect" x="335" y="390" width="480" height="115"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="115"/>
+                <rect key="frame" x="0.0" y="0.0" width="480" height="134"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SWS-Ch-5KG">
-                        <rect key="frame" x="18" y="78" width="444" height="17"/>
+                        <rect key="frame" x="18" y="97" width="444" height="17"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="If you run your own NewsBlur server" id="qAu-F8-grt">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-tB-X1x">
-                        <rect key="frame" x="150" y="51" width="310" height="22"/>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-fE-7fh">
+                        <rect key="frame" x="48" y="70" width="96" height="17"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Server domain:" id="aKX-lx-Mdy">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-tB-X1x" userLabel="Server domain">
+                        <rect key="frame" x="150" y="67" width="310" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="jVT-ta-m8p">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -377,16 +384,8 @@
                             </connections>
                         </textFieldCell>
                     </textField>
-                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UZa-fE-7fh">
-                        <rect key="frame" x="48" y="54" width="96" height="17"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Server domain:" id="aKX-lx-Mdy">
-                            <font key="font" metaFont="system"/>
-                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="vqy-Em-sG0">
-                        <rect key="frame" x="20" y="40" width="440" height="5"/>
+                        <rect key="frame" x="20" y="48" width="440" height="5"/>
                     </box>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9uW-i4-1Jr">
                         <rect key="frame" x="131" y="18" width="218" height="18"/>
@@ -404,14 +403,14 @@
                     <constraint firstItem="0Mf-tB-X1x" firstAttribute="leading" secondItem="UZa-fE-7fh" secondAttribute="trailing" constant="8" id="8Jl-PU-Cnh"/>
                     <constraint firstAttribute="trailing" secondItem="0Mf-tB-X1x" secondAttribute="trailing" constant="20" id="8LC-6G-00g"/>
                     <constraint firstItem="UZa-fE-7fh" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="50" id="8jj-o6-376"/>
-                    <constraint firstItem="0Mf-tB-X1x" firstAttribute="top" secondItem="SWS-Ch-5KG" secondAttribute="bottom" constant="5" id="PNd-f0-GbJ"/>
-                    <constraint firstItem="vqy-Em-sG0" firstAttribute="top" secondItem="0Mf-tB-X1x" secondAttribute="bottom" constant="8" id="RrA-xu-118"/>
+                    <constraint firstItem="0Mf-tB-X1x" firstAttribute="top" secondItem="SWS-Ch-5KG" secondAttribute="bottom" constant="8" id="PNd-f0-GbJ"/>
+                    <constraint firstItem="vqy-Em-sG0" firstAttribute="top" secondItem="0Mf-tB-X1x" secondAttribute="bottom" constant="16" id="RrA-xu-118"/>
                     <constraint firstItem="SWS-Ch-5KG" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="Y6K-D5-kk1"/>
                     <constraint firstItem="SWS-Ch-5KG" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="bjf-qY-6ty"/>
                     <constraint firstItem="9uW-i4-1Jr" firstAttribute="centerX" secondItem="EiT-Mj-1SZ" secondAttribute="centerX" id="dP2-io-C6Q"/>
-                    <constraint firstItem="0Mf-tB-X1x" firstAttribute="firstBaseline" secondItem="UZa-fE-7fh" secondAttribute="firstBaseline" id="dl6-ju-1Zr"/>
+                    <constraint firstItem="0Mf-tB-X1x" firstAttribute="baseline" secondItem="UZa-fE-7fh" secondAttribute="baseline" id="dl6-ju-1Zr"/>
                     <constraint firstAttribute="bottom" secondItem="9uW-i4-1Jr" secondAttribute="bottom" constant="20" id="dur-5x-ewZ"/>
-                    <constraint firstItem="9uW-i4-1Jr" firstAttribute="top" secondItem="vqy-Em-sG0" secondAttribute="bottom" constant="8" id="ivX-MY-VZt"/>
+                    <constraint firstItem="9uW-i4-1Jr" firstAttribute="top" secondItem="vqy-Em-sG0" secondAttribute="bottom" constant="16" id="ivX-MY-VZt"/>
                     <constraint firstAttribute="trailing" secondItem="SWS-Ch-5KG" secondAttribute="trailing" constant="20" id="rGs-F1-E2S"/>
                     <constraint firstAttribute="trailing" secondItem="vqy-Em-sG0" secondAttribute="trailing" constant="20" id="uIl-4w-L6D"/>
                 </constraints>
