@@ -18,6 +18,24 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 
     func checkIfDefaultFeedApp() {
         let defaults = Defaults()
+        if #available(macOS 10.13, *) {
+            // it's fine
+        } else {
+            if !defaults.suppress1012Warning {
+                let alert: NSAlert = NSAlert()
+                alert.messageText = "NewsBlur Helper doesn’t work as a feed reader on macOS 10.12."
+                alert.informativeText = "You can still use its Safari app extension allowing Safari to open NewsBlur stories in new tabs.\n\nPlease upgrade to macOS 10.13 or later in order to use it as a feed reader."
+                alert.showsSuppressionButton = true
+                alert.addButton(withTitle: "OK")
+
+                alert.runModal()
+                if alert.suppressionButton!.state == NSControl.StateValue.on {
+                    defaults.suppress1012Warning = true
+                }
+            }
+            return
+        }
+
         if !defaults.askToSetFeedApp {
             return
         }

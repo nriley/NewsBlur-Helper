@@ -12,6 +12,7 @@ class Defaults : NSObject {
     enum Key {
         static let newsBlurDomain: String = "newsBlurDomain"
         static let askToSetFeedApp: String = "askToSetFeedApp"
+        static let suppress1012Warning: String = "suppress1012Warning"
     }
 
     lazy var suite: UserDefaults? = {
@@ -51,6 +52,15 @@ class Defaults : NSObject {
         }
         set {
             standard.set(newValue, forKey: Key.askToSetFeedApp)
+        }
+    }
+
+    var suppress1012Warning: Bool {
+        get {
+            return standard.bool(forKey: Key.suppress1012Warning)
+        }
+        set {
+            standard.set(newValue, forKey: Key.suppress1012Warning)
         }
     }
 }
