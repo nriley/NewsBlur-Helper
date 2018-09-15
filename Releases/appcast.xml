@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?><rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" version="2.0">
+<channel>
+<title>NewsBlur Helper</title>
+<item>
+<title>1.0b1</title>
+<pubDate>Sat, 15 Sep 2018 19:23:24 -0400</pubDate>
+<sparkle:minimumSystemVersion>10.12.6</sparkle:minimumSystemVersion>
+<enclosure url="https://sabi.net/temp/newsblur-helper/NewsBlur%20Helper%201.0b1.dmg" sparkle:version="1" sparkle:shortVersionString="1.0b1" length="4123560" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCXW0z8lhgkr3OcKIgLTtB2JQoodwIUWxkOLJIEL7X8uLbdnUR/T1bTExY="/>
+</item>
+</channel></rss>
