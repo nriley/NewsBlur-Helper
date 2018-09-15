@@ -19,8 +19,6 @@ You should then be able to use the 'o' or 'v' keys to open stories in new tabs.
 
 Previously, similar functionality was provided by the [NewsBlur Open in New Tab Safari extension](https://github.com/nriley/OpenInNewTab), which is no longer supported as of Safari 12.
 
-Please note that currently the Safari app extension may launch on every Safari page load, which is somewhat inefficient; this will be fixed before 1.0.
-
 Handling `feed:` URLs
 ---------------------
 The `feed` URL scheme allows a feed to be opened in your preferred feed reader, such as NewsBlur.  When you launch NewsBlur Helper, it will offer to send `feed` URLs to NewsBlur.  If you don’t want NewsBlur to handle `feed` URLs, check the checkbox and NewsBlur Helper will never ask again. 
