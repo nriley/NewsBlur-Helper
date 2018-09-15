@@ -53,7 +53,7 @@ codesign --sign $IDENTITY $DMG
 spctl -vv --assess --type open --context context:primary-signature $DMG
 
 # update appcast
-$PACKAGEDIR/Sparkle/bin/generate_appcast $PACKAGEDIR/dsa_priv.pem $RELEASEDIR
+$PACKAGEDIR/Sparkle/bin/generate_appcast -f $PACKAGEDIR/dsa_priv.pem $RELEASEDIR
 APPCAST=$RELEASEDIR/appcast.xml
 
 # clean up
