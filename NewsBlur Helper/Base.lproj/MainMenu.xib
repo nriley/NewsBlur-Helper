@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14313.18"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,9 +13,13 @@
         </customObject>
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
-        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NewsBlur_Helper" customModuleProvider="target"/>
+        <customObject id="Voe-Tx-rLC" userLabel="AppDelegate" customClass="AppDelegate" customModule="NewsBlur_Helper" customModuleProvider="target"/>
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
-        <customObject id="Id8-wd-YdS" userLabel="Sparkle Updater" customClass="SUUpdater"/>
+        <customObject id="Id8-wd-YdS" userLabel="Sparkle Updater" customClass="SUUpdater">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="X80-TD-a8V"/>
+            </connections>
+        </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
             <items>
                 <menuItem title="NewsBlur Helper" id="1Xt-HY-uBw">
@@ -344,14 +349,14 @@
         </menu>
         <window identifier="NewsBlur Helper Preferences" title="NewsBlur Helper Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="NewsBlur Helper Preferences" animationBehavior="default" id="QvC-M9-y7g" userLabel="Preferences Panel" customClass="NSPanel">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="115"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
+            <rect key="contentRect" x="335" y="390" width="417" height="134"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
             <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="134"/>
+                <rect key="frame" x="0.0" y="0.0" width="417" height="134"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SWS-Ch-5KG">
-                        <rect key="frame" x="18" y="97" width="444" height="17"/>
+                        <rect key="frame" x="18" y="97" width="381" height="17"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" title="If you run your own NewsBlur server" id="qAu-F8-grt">
                             <font key="font" metaFont="systemBold"/>
                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -367,7 +372,7 @@
                         </textFieldCell>
                     </textField>
                     <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-tB-X1x" userLabel="Server domain">
-                        <rect key="frame" x="150" y="67" width="310" height="22"/>
+                        <rect key="frame" x="150" y="67" width="247" height="22"/>
                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="jVT-ta-m8p">
                             <font key="font" metaFont="system"/>
                             <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
@@ -385,10 +390,10 @@
                         </textFieldCell>
                     </textField>
                     <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="vqy-Em-sG0">
-                        <rect key="frame" x="20" y="48" width="440" height="5"/>
+                        <rect key="frame" x="20" y="48" width="377" height="5"/>
                     </box>
                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="9uW-i4-1Jr">
-                        <rect key="frame" x="131" y="18" width="218" height="18"/>
+                        <rect key="frame" x="100" y="18" width="218" height="18"/>
                         <buttonCell key="cell" type="check" title="Check for updates automatically" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7wP-xf-RYk">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
@@ -415,7 +420,7 @@
                     <constraint firstAttribute="trailing" secondItem="vqy-Em-sG0" secondAttribute="trailing" constant="20" id="uIl-4w-L6D"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="-3" y="325"/>
+            <point key="canvasLocation" x="-34.5" y="325"/>
         </window>
         <customObject id="zNY-yr-AYn" customClass="Defaults" customModule="NewsBlur_Helper" customModuleProvider="target"/>
         <customFormatter id="UzH-Aa-1In" customClass="DomainNameFormatter" customModule="NewsBlur_Helper" customModuleProvider="target"/>
