@@ -23,6 +23,8 @@ Handling `feed:` URLs
 ---------------------
 The `feed` URL scheme allows a feed to be opened in your preferred feed reader, such as NewsBlur.  When you launch NewsBlur Helper, it will offer to send `feed` URLs to NewsBlur.  If you don’t want NewsBlur to handle `feed` URLs, check the checkbox and NewsBlur Helper will never ask again. 
 
+Please note this feature is only supported on macOS 10.13 High Sierra and later.  If you're running macOS 10.12, you will be informed of this when you launch NewsBlur Helper.
+
 Previously, this functionality was provided by the NewsBlur Safari Helper app.
 
 If you have the NewsBlur Web app installed on your own server
