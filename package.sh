@@ -54,8 +54,18 @@ spctl -vv --assess --type open --context context:primary-signature $DMG
 
 # update appcast
 $PACKAGEDIR/Sparkle/bin/generate_appcast $PACKAGEDIR/dsa_priv.pem $RELEASEDIR
+APPCAST=$RELEASEDIR/appcast.xml
 
 # clean up
 rm -rf "$EXPORTDIR"
 rm -rf $RELEASEDIR/.tmp
 
+# update Web presence (temporary)
+WEBDIR=web/temp/newsblur-helper
+WEBDMG=$WEBDIR/${DMG:t}
+WEBAPPCAST=$WEBDIR/${APPCAST:t}
+scp $DMG osric:${WEBDMG:q}.new
+scp $APPCAST osric:${WEBAPPCAST:q}.new
+ssh osric chmod -R go+rX $WEBDIR
+ssh osric mv ${WEBDMG:q}{.new,}
+ssh osric mv ${WEBAPPCAST:q}{.new,}
