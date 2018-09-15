@@ -1,5 +1,15 @@
 #!/bin/zsh -e
 
+# Testing Sparkle first-launch update from feed:// URL (example):
+# rm -rf Releases
+# agvtool new-version -all 1
+# ./package.sh
+# agvtool bump -all
+# defaults delete com.newsblur.NewsBlur-Helper # test first-run experience
+# [download & install NewsBlur Helper]
+# ./package.sh
+# launch -a /path/to/NewsBlur\ Helper.app feed://njr.sabi.net
+
 set -x -v
 
 PACKAGEDIR="$PWD"

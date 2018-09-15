@@ -7,9 +7,10 @@
 //
 
 import Cocoa
+import Sparkle
 
 @NSApplicationMain
-class AppDelegate: NSObject, NSApplicationDelegate {
+class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
 
     static let feedURLScheme: String = "feed"
 
@@ -69,7 +70,24 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         DispatchQueue.main.async {
             self.checkIfDefaultFeedApp()
 
+            NSLog("Sparkle update in progress: \(SUUpdater.shared().updateInProgress)")
+            NSLog("Sparkle automatically checks for updates: \(SUUpdater.shared().automaticallyChecksForUpdates)")
+
             if self.wasAskedToOpenURLs {
+                // Delay quitting if Sparkle needs to finish or is about to start.
+                if let updater: SUUpdater = SUUpdater.shared() {
+                    if updater.updateInProgress {
+                        NSLog("Sparkle update in progress - not quitting immediately")
+                        return
+                    }
+                    if updater.automaticallyChecksForUpdates {
+                        let lastCheckDate = updater.lastUpdateCheckDate
+                        if lastCheckDate == nil || lastCheckDate!.addingTimeInterval(updater.updateCheckInterval) <= Date() {
+                            NSLog("Sparkle update pending - not quitting immediately")
+                            return
+                        }
+                    }
+                }
                 NSApp.terminate(nil)
             } else if !NSApp.isActive && !NSApp.isHidden {
                 // Work around Gatekeeper focus stealing if we don't need to display a NSAlert
@@ -77,6 +95,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 // conceivably be triggered at other times)
                 NSApp.activate(ignoringOtherApps: true)
             }
+        }
+    }
+
+    func updater(_ updater: SUUpdater, didFindValidUpdate item: SUAppcastItem) {
+        NSLog("Sparkle did find valid update")
+        if self.wasAskedToOpenURLs && !NSApp.isActive {
+            // the browser is probably in front so the user won't see anything
+            NSApp.activate(ignoringOtherApps: true)
+        }
+    }
+
+    func updaterDidNotFindUpdate(_ updater: SUUpdater) {
+        NSLog("Sparkle did not find update")
+        if self.wasAskedToOpenURLs {
+            NSApp.terminate(nil)
         }
     }
 
