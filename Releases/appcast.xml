@@ -7,4 +7,13 @@
 <sparkle:minimumSystemVersion>10.12.6</sparkle:minimumSystemVersion>
 <enclosure url="https://sabi.net/temp/newsblur-helper/NewsBlur%20Helper%201.0b1.dmg" sparkle:version="1" sparkle:shortVersionString="1.0b1" length="4123560" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCXW0z8lhgkr3OcKIgLTtB2JQoodwIUWxkOLJIEL7X8uLbdnUR/T1bTExY="/>
 </item>
+<item>
+<title>1.0b2</title>
+<pubDate>Mon, 17 Sep 2018 21:26:30 -0400</pubDate>
+<sparkle:minimumSystemVersion>10.12.6</sparkle:minimumSystemVersion>
+<enclosure url="https://sabi.net/temp/newsblur-helper/NewsBlur%20Helper%201.0b2.dmg" sparkle:version="2" sparkle:shortVersionString="1.0b2" length="4132829" type="application/octet-stream" sparkle:dsaSignature="MCwCFFfVuGv0z94ITuDZ/YNfHUHYSH5MAhRbQHi8BX1M9PXSR/3FChyushn+Rg=="/>
+<sparkle:deltas>
+<enclosure url="https://sabi.net/temp/newsblur-helper/NewsBlur%20Helper2-1.delta" sparkle:version="2" sparkle:shortVersionString="1.0b2" sparkle:deltaFrom="1" length="44363" type="application/octet-stream" sparkle:dsaSignature="MC0CFQCKtLtWLoqaU/RPqaptBPRgC0RM8QIUU6oBKw+PwQSJx/DHajhI592k8Es="/></sparkle:deltas>
+</item>
+
 </channel></rss>
