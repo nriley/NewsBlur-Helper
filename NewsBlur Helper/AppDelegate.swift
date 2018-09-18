@@ -80,6 +80,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, SUUpdaterDelegate {
         }
     }
 
+    func applicationWillFinishLaunching(_ notification: Notification) {
+        PFMoveToApplicationsFolderIfNecessary();
+    }
+
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // At least in 10.13.6, need to delay NSAlert display because the app ends up
         // in the background on first launch otherwise (Gatekeeper focus stealing, I think)
